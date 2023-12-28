@@ -25,3 +25,4 @@ Route::get('/',[StudentController::class,'index']);
 Route::get('/about',[StudentController::class,'about']);
 Route::get('/register',[StudentController::class,'register']);
 Route::post('/register',[StudentController::class,'create']);
+Route::get('/std_view',[StudentController::class,'std_view']);
