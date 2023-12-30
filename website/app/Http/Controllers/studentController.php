@@ -20,12 +20,28 @@ class studentcontroller extends Controller
         $std_data->name=$request['name'];
         $std_data->password=$request['password'];
         $std_data->save();
-        return redirect('/regsiter');
+        return redirect('/register');
     }
 
     public function std_view(){
         $data=stdController::all();
         $std_Data=compact('data');
         return view('std_view')->with($std_Data);
+    }
+
+    public function delete($id){
+        $user_data=stdController::find($id);
+        if(!is_null($user_data)) {
+            $user_data->delete();
+            return redirect('/std_view');
+        } else {
+            return redirect('/std_view');
+            
+        }
+    }
+
+    public function edit($id){
+        $user_data=stdController::find($id);
+        return view('update')->with(['user_data' =>$user_data]);
     }
 }

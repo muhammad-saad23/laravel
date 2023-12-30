@@ -26,3 +26,5 @@ Route::get('/about',[StudentController::class,'about']);
 Route::get('/register',[StudentController::class,'register']);
 Route::post('/register',[StudentController::class,'create']);
 Route::get('/std_view',[StudentController::class,'std_view']);
+Route::get('/std_view/dlt/{id}',[StudentController::class,'delete'])->name('std_del');
+Route::get('/std_view/dlt/{id}',[StudentController::class,'edit'])->name('std_edit');

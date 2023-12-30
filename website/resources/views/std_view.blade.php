@@ -17,6 +17,7 @@
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
+      <th scope="col">Delete</th>
       
     </tr>
   </thead>
@@ -26,6 +27,8 @@
       <th scope="row">{{$v->id}}</th>
       <td>{{$v->name}}</td>
       <td>{{$v->email}}</td>
+      <td><a href="{{route('std_del',['id' => $v->id])}}" class="btn btn-danger">Delete</a></td>
+      <td><a href="{{route('std_edit',['id' => $v->id])}}" class="btn btn-success">Edit</a></td>
       
     </tr>
     @endforeach
