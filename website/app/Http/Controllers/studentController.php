@@ -44,4 +44,13 @@ class studentcontroller extends Controller
         $user_data=stdController::find($id);
         return view('update')->with(['user_data' =>$user_data]);
     }
+
+    public function update($id ,Request $request){
+        $user=stdController::find($id);
+        $user->name=$request['name'];
+        $user->email=$request['email'];
+        $user->password=$request['password'];
+        $user->save();
+        return redirect('std_view');
+    }
 }
